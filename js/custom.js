@@ -18,6 +18,14 @@ frame.innerHTML = tags;
 const asideEl = document.createElement("aside");
 asideEl.classList.add("modal");
 asideEl.innerText = "Modal";
-console.dir(asideEl);
 
+// const btnEl = document.createElement("button");
+// btnEl.innerText = "CLOSE";
+// asideEl.append(btnEl);
+
+asideEl.innerHTML = `
+  <button>CLOSE</button>
+`;
+
+// console.dir(asideEl);
 frame.append(asideEl);
