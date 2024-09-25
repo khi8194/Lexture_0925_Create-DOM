@@ -29,4 +29,5 @@ asideEl.innerHTML = `
 `;
 
 //자식 요소까지 적용된 aside요소를 기존 자식 요소를 유지한 상태에서 추가
-frame.append(asideEl);
+// frame.append(asideEl);
+document.body.append(asideEl);
