@@ -1,7 +1,11 @@
 //innerHTML을 활용한 동적 DOM생성
 const frame = document.querySelector("section");
 const data = ["title1", "title2", "title3"];
+
+//전체 태그 문자열이 담길 변수
 let tags = "";
+
+//배열을 반복돌면서 tags에 생성할 태그 문자열 쌓기
 data.forEach((el) => {
 	tags += `
     <article>
@@ -9,23 +13,20 @@ data.forEach((el) => {
     </article>
   `;
 });
-console.log(tags);
+
+//section요소안에 최종적으로 DOM생성
 frame.innerHTML = tags;
 
-//append로 동적 DOM 생성
-//기존 선택자 안쪽의 요소들을 유지하면서 뒤쪽에 새롭게 추가
-//append의 인수값으로는 문자값이 아닌 살재 Element Node 형태로 전달
+//aside라는 엘리먼트 노드를 직접 생성하고 클래스명, 텍스트 추가
 const asideEl = document.createElement("aside");
 asideEl.classList.add("modal");
 asideEl.innerText = "Modal";
 
-// const btnEl = document.createElement("button");
-// btnEl.innerText = "CLOSE";
-// asideEl.append(btnEl);
-
+//aside요소 안쪽의 복잡한 자식 요소 구조는 innerHTML로 생성
 asideEl.innerHTML = `
+  <div class='con'></div>
   <button>CLOSE</button>
 `;
 
-// console.dir(asideEl);
+//자식 요소까지 적용된 aside요소를 기존 자식 요소를 유지한 상태에서 추가
 frame.append(asideEl);
